@@ -5,12 +5,12 @@ import { test } from './api';
 
 function App() {
 
-  const [test, setTest] = useState("");
+  const [testText, setTestText] = useState("");
 
   const fetchTestApi = async () => {
     const res = await test();
     const resData = await res.json();
-    setTest(resData.test)
+    setTestText(resData.test)
   }
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function App() {
           Frontend de proyecto de lenguajes DB
         </p>
         <p>
-          {test}
+          {testText}
         </p>
       </header>
     </div>
