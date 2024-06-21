@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { test } from './api';
 
 function App() {
 
+  const [test, setTest] = useState("");
+
   const fetchTestApi = async () => {
     const res = await test();
-    console.log('print: res: ', res);
+    const resData = await res.json();
+    setTest(resData)
   }
 
   useEffect(() => {
@@ -19,6 +22,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Frontend de proyecto de lenguajes
+        </p>
+        <p>
+          {test}
         </p>
       </header>
     </div>
