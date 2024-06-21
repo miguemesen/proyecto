@@ -10,7 +10,7 @@ function App() {
   const fetchTestApi = async () => {
     const res = await test();
     const resData = await res.json();
-    setTest(resData)
+    setTest(resData.test)
   }
 
   useEffect(() => {
