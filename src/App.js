@@ -21,7 +21,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Frontend de proyecto de lenguajes
+          Frontend de proyecto de lenguajes DB
         </p>
         <p>
           {test}
