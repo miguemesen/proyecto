@@ -1,0 +1,47 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  &-header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #cbcbcb11;
+    padding: 10px;
+    &-title{
+      color: white;
+      font-size: 25px;
+    }
+  }
+
+  &-create-tweet {
+    padding: 25px 25px 10px 25px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #cbcbcb11;
+
+
+    &-text-area{
+      height: 50px;
+      border-radius: 5px;
+      background-color: #141620;
+      color: white;
+      border: 2px solid #cbcbcb11;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-button-post {
+      width: 85px;
+      height: 30px;
+      border-radius: 20px;
+      margin-left: auto;
+      background-color: rgb(29, 155, 240);
+      color: white;
+      margin-top: 10px;
+      border: 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
