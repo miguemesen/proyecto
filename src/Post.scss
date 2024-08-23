@@ -1,0 +1,27 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #cbcbcb11;
+  padding: 25px;
+
+  .secondary-text {
+    color: rgb(113, 118, 123)
+  }
+  &-header {
+    display: flex;
+    gap: 10px;
+    color: white;
+    margin-bottom: 10px;
+
+    &-name {
+      cursor: pointer;
+    }
+    &-username {
+      cursor: pointer;
+    }
+  }
+  &-message {
+    color: white;
+  }
+
+}

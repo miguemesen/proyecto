@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { useState } from "react";
-// import { login } from "./api";
+import { login } from "./api";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -10,16 +10,16 @@ function Login() {
   const navigate = useNavigate();
 
   const loginUser = async () => {
-    // const response = await login(username, password);
+    const response = await login(username, password);
     
-    // const responseData = await response.json();
-    // if (response.ok) {
-    //   localStorage.setItem('username', username)
-    //   localStorage.setItem('user_id', responseData.user_id)
-    //   navigate("/")
-    // } else {
-    //   alert(responseData.message)
-    // }
+    const responseData = await response.json();
+    if (response.ok) {
+      localStorage.setItem('username', username)
+      localStorage.setItem('user_id', responseData.user_id)
+      navigate("/")
+    } else {
+      alert(responseData.message)
+    }
   }
 
   return (

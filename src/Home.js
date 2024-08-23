@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Home.scss'
 import Post from './Post'
-// import { createPost, getMyFeed } from './api';
+import { createPost, getMyFeed } from './api';
 import { getUserInformation } from './utils';
 
 const Home = () => {
@@ -18,14 +18,14 @@ const Home = () => {
   }
 
   const postTweet = async () => {
-    // const response = await createPost(tweetText,userInformation.user_id)
-    // fetchFeed()
+    const response = await createPost(tweetText,userInformation.user_id)
+    fetchFeed()
   }
 
   const fetchFeed = async () => {
-    // const response = await getMyFeed(userInformation.user_id)
-    // const responseData = await response.json()
-    // setPosts(responseData)
+    const response = await getMyFeed(userInformation.user_id)
+    const responseData = await response.json()
+    setPosts(responseData)
   }
 
   useEffect(() => {
