@@ -32,6 +32,8 @@ const Home = () => {
     fetchFeed()
   },[])
 
+  console.log('print: posts: ', posts);
+
   return (
     <div className='home'>
       <div className='home-header'>
@@ -41,7 +43,7 @@ const Home = () => {
         <textarea className='home-create-tweet-text-area' placeholder='What is happening?!' value={tweetText} onChange={(e) => setTweetText(e.target.value)}/>
         <button className='home-create-tweet-button-post' onClick={() => handlePostOnClick()}>Post</button>
       </div>
-      {posts && posts?.map((d,i) => <Post key={i} userId={d.user_id} name={d.email} username={d.username} message={d.paragraph} date={d.date}/>)}
+      {posts && posts?.map((d,i) => <Post key={i} userId={d.USER_ID} name={d.EMAIL} username={d.USERNAME} message={d.PARAGRAPH} date={d.TWEET_DATE}/>)}
     </div>
   )
 }

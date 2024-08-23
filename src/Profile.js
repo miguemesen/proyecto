@@ -26,6 +26,7 @@ const Profile = () => {
   const fetchMyInfo = async () => {
     const response = await getProfileById(user_id);
     const responseData = await response.json();
+    console.log('print: responseData: ', responseData);
     setInformation(responseData[0]);
   };
 
@@ -58,7 +59,7 @@ const Profile = () => {
   }, [user_id]);
 
   useEffect(() => {
-    setFollowOption(information?.followers.includes(Number(localUserId)) ? 'Unfollow' : 'Follow')
+    setFollowOption(information?.FOLLOWERS?.includes(Number(localUserId)) ? 'Unfollow' : 'Follow')
   }, [information])
 
   return (
@@ -68,12 +69,12 @@ const Profile = () => {
       </div>
       <div className="profile-information">
         <div className="profile-information-left">
-          <div>email: {information?.email}</div>
-          <div>username: {information?.username}</div>
+          <div>email: {information?.EMAIL}</div>
+          <div>username: {information?.USERNAME}</div>
         </div>
         <div className="profile-information-right" onClick={() => handleFollowClick()}>
-          <div>followers: {information?.followers.length}</div>
-          <div>following: {information?.following.length}</div>
+          <div>followers: {information?.FOLLOWERS?.length}</div>
+          <div>following: {information?.FOLLOWING?.length}</div>
         </div>
         {localUserId !== user_id && (<div>
           <button
@@ -88,11 +89,11 @@ const Profile = () => {
         posts?.map((d, i) => (
           <Post
             key={i}
-            userId={d.user_id}
-            name={d.email}
-            username={d.username}
-            message={d.paragraph}
-            date={d.date}
+            userId={d.USER_ID}
+            name={d.EMAIL}
+            username={d.USERNAME}
+            message={d.PARAGRAPH}
+            date={d.TWEET_DATE}
           />
         ))}
         {isShowingFollow && (

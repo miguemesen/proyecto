@@ -13,7 +13,6 @@ const Search = () => {
     const result = await searchUser(search);
     const parsedResult = await result.json()
     setSearchResults(parsedResult)
-    console.log('print: parsedResult: ', parsedResult);
   }
   return (
     <div className="search">
@@ -25,22 +24,22 @@ const Search = () => {
         <button className="search-information-button" onClick={() => onButtonClick()}><FaSearch /></button>
       </div>
       {searchResults && searchResults?.map((sr,i) => (
-        <div key={i} className="search-information-user" onClick={() => navigate(`/profile/${sr.user_id}`)}>
+        <div key={i} className="search-information-user" onClick={() => navigate(`/profile/${sr.USER_ID}`)}>
           <div>
             username
-            <div className='username' >{sr.username}</div>
+            <div className='username' >{sr.USERNAME}</div>
           </div>
           <div>
             email
-            <div className='email' >{sr.email}</div>
+            <div className='email' >{sr.EMAIL}</div>
           </div>
           <div>
             followers
-            <div className='followers' >{sr.followers?.length}</div>
+            <div className='followers' >{sr.FOLLOWERS?.length}</div>
           </div>
           <div>
             following
-            <div className='following' >{sr.following?.length}</div>
+            <div className='following' >{sr.FOLLOWING?.length}</div>
           </div>
         </div>
       ))}
